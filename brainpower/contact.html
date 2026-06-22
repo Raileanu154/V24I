@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BrainPower</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontul modern Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* BARA DE MENIU ALBASTRĂ */
+        .navbar {
+            background-color: #0066ff !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            padding: 12px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .nav-link-menu {
+            color: rgba(255, 255, 255, 0.75) !important;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link-menu:hover, .nav-link-menu.active {
+            color: #ffffff !important;
+        }
+
+        /* CARDURI ALBE ROTUNJITE (PANOURI CONȚINUT) */
+        .contact-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            border: none;
+            height: 100%;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #0066ff;
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.15);
+        }
+
+        /* BUTONUL DE TRIMITERE */
+        .btn-submit {
+            background: #198754;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #146c43;
+        }
+
+        /* DATE DE CONTACT STILIZATE */
+        .contact-info-link {
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info-link:hover {
+            text-decoration: underline;
+        }
+
+        /* BUTOANE SOCIAL MEDIA */
+        .btn-social {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        /* PLACEHOLDER IMAGINE HARTĂ */
+        .map-placeholder {
+            background-color: #e2e8f0;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<!-- BARA DE MENIU SUPRAPUSĂ -->
+<nav class="navbar navbar-expand-lg navbar-dark mb-5">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">BrainPower</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item"><a class="nav-link" href="subjects.html">Materii</a></li>
+                <li class="nav-item"><a class="nav-link" href="teachers.html">Profesori</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
+                <li class="nav-item"><a class="nav-link" href="prices.html">Prețuri</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container pb-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold" style="color: #1e293b;">Contactează-ne</h1>
+        <p class="text-muted">Completează formularul de mai jos sau folosește datele noastre directe</p>
+    </div>
+
+    <div class="row g-4">
+        
+        <!-- COLOANA STÂNGA: FORMULARUL DE CONTACT -->
+        <div class="col-md-6">
+            <div class="card contact-card">
+                <h3 class="fw-bold mb-4" style="color: #1e293b; font-size: 1.3rem;">Trimite o cerere de înscriere</h3>
+                
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label class="form-label">Nume elev</label>
+                        <input type="text" id="elev" class="form-control" placeholder="Numele complet al elevului">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nume părinte</label>
+                        <input type="text" id="parinte" class="form-control" placeholder="Numele părintelui sau tutorelui">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label">Telefon</label>
+                            <input type="tel" id="telefon" class="form-control" placeholder="+373 ...">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="exemplu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label">Materie</label>
+                            <select class="form-select">
+                                <option>Matematică</option>
+                                <option>Fizică</option>
+                                <option>Chimie</option>
+                                <option>Engleză</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Nivel</label>
+                            <select class="form-select">
+                                <option>Primar</option>
+                                <option>Gimnaziu</option>
+                                <option>Liceu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Mesaj sau detalii suplimentare</label>
+                        <textarea class="form-control" rows="4" placeholder="Menționați aici detalii despre program sau scopul pregătirii..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">
+                        Trimite Mesajul
+                    </button>
+                </form>
+
+                <p id="mesaj" class="mt-3 fw-medium text-success"></p>
+            </div>
+        </div>
+
+        <!-- COLOANA DREAPTA: DATE DE CONTACT, HARTĂ & SOCIALS -->
+        <div class="col-md-6">
+            <div class="card contact-card d-flex flex-column justify-content-between">
+                <div>
+                    <h3 class="fw-bold mb-3" style="color: #1e293b; font-size: 1.3rem;">Informații Generale</h3>
+                    <div class="mb-4">
+                        <p class="mb-2 text-secondary"><strong>Telefon:</strong> <a href="tel:+37360000000" class="contact-info-link">+373 60 000 000</a></p>
+                        <p class="mb-2 text-secondary"><strong>Email:</strong> <a href="mailto:contact@brainpower.md" class="contact-info-link">contact@brainpower.md</a></p>
+                        <p class="text-secondary"><strong>Adresa:</strong> Cahul, Republica Moldova</p>
+                    </div>
+
+                    <hr class="my-4 opacity-25">
+
+                    <h3 class="fw-bold mb-3" style="color: #1e293b; font-size: 1.2rem;">Locația Noastră</h3>
+                    <div class="mb-4">
+                        <!-- Dacă ai o imagine pentru hartă, adaugă calea în src. Momentan am pus un layout modern text-placeholder -->
+                        <div class="map-placeholder">
+                            <span>[ Hartă Centru BrainPower - Cahul ]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="fw-bold mb-3" style="color: #1e293b; font-size: 1.1rem;">Comunitatea Noastră</h3>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-primary btn-social">Facebook</a>
+                        <a href="#" class="btn btn-danger btn-social">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/validation.js"></script>
+
+</body>
+</html>

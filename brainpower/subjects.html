@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materii de Studiu - BrainPower</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-color: #f1f2f4;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* NAVBAR CORECtATĂ */
+        .navbar {
+            background-color: #0066ff !important;
+            box-shadow: 0 4px 10px rgba(59, 57, 57, 0.08);
+            padding: 12px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.75) !important;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        /* HEADER ACADEMIC */
+        .academic-header {
+            background: #5f5f67; 
+            color: #ffffff;
+            padding: 60px 0;
+            border-bottom: 5px solid #0066ff;
+        }
+
+        .badge-category {
+            background: rgba(0, 102, 255, 0.2);
+            color: #38bdf8;
+            border: 1px solid rgba(0, 102, 255, 0.4);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* BUTOANE FILTRARE */
+        .filter-buttons .btn {
+            border-radius: 30px; 
+            padding: 8px 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s;
+        }
+
+        /* CARDURI DE TIP CATALOG */
+        .subject-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            background: #ffffff;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border-color: #cbd5e1;
+        }
+
+        .card-img-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Insigne aplicate direct peste poze */
+        .level-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #fff;
+            z-index: 10;
+        }
+        .bg-gimnaziu { background-color: #198754; }
+        .bg-liceu { background-color: #f59e0b; }
+
+        .subject-card h5 {
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .subject-card .price {
+            color: #0066ff;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+
+        .btn-action {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .subject-card:hover .btn-action {
+            background-color: #0066ff;
+            color: #ffffff;
+        }
+
+        /* ZONA DE QUIZ */
+        .quiz-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .quiz-btn {
+            border-radius: 12px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">BrainPower</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item"><a class="nav-link active" href="subjects.html">Materii</a></li>
+                <li class="nav-item"><a class="nav-link" href="teachers.html">Profesori</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
+                <li class="nav-item"><a class="nav-link" href="prices.html">Prețuri</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="academic-header text-center">
+    <div class="container">
+        <div class="badge-category mb-3">Oferta Educațională 2026</div>
+        <h1 class="display-5 fw-bold mb-2">Programe de Mentorat & Meditații</h1>
+        <p class="text-secondary max-w-2xl mx-auto">Găsește cursul potrivit obiectivelor tale și învață eficient alături de experți.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5 filter-buttons">
+        <button class="btn btn-dark me-2" onclick="filterSubjects('all')">Toate Programele</button>
+        <button class="btn btn-outline-success me-2" onclick="filterSubjects('gimnaziu')">Gimnaziu (Clasele V-VIII)</button>
+        <button class="btn btn-outline-warning" onclick="filterSubjects('liceu')">Liceu (Clasele IX-XII)</button>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3 subject gimnaziu">
+            <div class="card subject-card">
+                <div class="card-img-container">
+                    <span class="level-badge bg-gimnaziu">Gimnaziu</span>
+                    <img src="img/subjects/matematica.jpg" class="card-img-top" alt="Meditații Matematică">
+                </div>
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h5>Matematică</h5>
+                        <p class="price mb-4">20€ / ședință</p>
+                    </div>
+                    <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 subject liceu">
+            <div class="card subject-card">
+                <div class="card-img-container">
+                    <span class="level-badge bg-liceu">Liceu</span>
+                    <img src="img/subjects/fizica.jpg" class="card-img-top" alt="Meditații Fizică">
+                </div>
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h5>Fizică</h5>
+                        <p class="price mb-4">25€ / ședință</p>
+                    </div>
+                    <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 subject gimnaziu">
+            <div class="card subject-card">
+                <div class="card-img-container">
+                    <span class="level-badge bg-gimnaziu">Gimnaziu</span>
+                    <img src="img/subjects/limbile.jpg" class="card-img-top" alt="Meditații Engleză">
+                </div>
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h5>Engleză</h5>
+                        <p class="price mb-4">18€ / ședință</p>
+                    </div>
+                    <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 subject liceu">
+            <div class="card subject-card">
+                <div class="card-img-container">
+                    <span class="level-badge bg-liceu">Liceu</span>
+                    <img src="img/subjects/chimia'.jpg" class="card-img-top" alt="Meditații Chimie">
+                </div>
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h5>Chimie</h5>
+                        <p class="price mb-4">22€ / ședință</p>
+                    </div>
+                    <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="my-5 py-3"></div>
+
+    <div class="quiz-section">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <span class="badge bg-primary mb-2 px-3 py-2 rounded-pill">Verifică-ți cunoștințele</span>
+                <h2 class="fw-bold mb-3" style="color: #0f172a;">Ești pregătit de un test rapid?</h2>
+                <p class="text-secondary mb-0">Răspunde la întrebarea demonstrativă din dreapta pentru a vedea cum funcționează testele noastre interactive.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-3 bg-light rounded-4 border">
+                    <p class="fw-semibold mb-3 text-dark" style="font-size: 1.1rem;">Care este rezultatul operației: <strong>5 + 7</strong> ?</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button onclick="checkAnswer(10)" class="btn btn-outline-dark quiz-btn">10</button>
+                        <button onclick="checkAnswer(12)" class="btn btn-primary quiz-btn">12</button>
+                        <button onclick="checkAnswer(15)" class="btn btn-outline-dark quiz-btn">15</button>
+                    </div>
+                    <p id="result" class="mt-3 fw-bold mb-0 text-success" style="min-height: 24px;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/quiz.js"></script>
+
+</body>
+</html>
