@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
+        /* Setează fundalul bării de navigare în negru complet */
+.custom-navbar {
+    background-color: #111111 !important; /* Negru închis modern */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+}
+
+/* Fixează dimensiunea logo-ului din bară să nu mai fie uriaș */
+.logo-navbar-img {
+    max-height: 42px; /* Îl face mic și elegant, potrivit pentru bară */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Opțional: Asigură-te că link-urile din meniu se văd bine pe negru */
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover, 
+.custom-navbar .nav-link.active {
+    color: #ffffff !important;
+}
         body {
             background-color: #f1f2f4;
             font-family: 'Inter', sans-serif;
@@ -20,7 +45,13 @@
             box-shadow: 0 4px 10px rgba(59, 57, 57, 0.08);
             padding: 12px 0;
         }
-
+  .logo-img {
+            height: 150px;
+            width: auto;
+            display: block;
+            mix-blend-mode: multiply; 
+            filter: contrast(1.05); 
+        }
         .navbar-brand {
             font-weight: 600;
             font-size: 1.5rem;
@@ -138,6 +169,7 @@
             color: #ffffff;
         }
 
+
         .quiz-section {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -157,7 +189,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">BrainPower</a>
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/gallery/imaginea_Mea.png" alt="BrainPower Logo" class="logo-img">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -173,7 +207,6 @@
         </div>
     </div>
 </nav>
-
 <div class="academic-header text-center">
     <div class="container">
         <div class="badge-category mb-3">Oferta Educațională 2026</div>
@@ -201,7 +234,7 @@
                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                     <div>
                         <h5>Matematică</h5>
-                        <p class="price mb-4">20€ / ședință</p>
+                        <p class="price mb-4">200lei / ședință</p>
                     </div>
                     <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
                 </div>
@@ -217,7 +250,7 @@
                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                     <div>
                         <h5>Fizică</h5>
-                        <p class="price mb-4">25€ / ședință</p>
+                        <p class="price mb-4">250lei / ședință</p>
                     </div>
                     <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
                 </div>
@@ -233,7 +266,7 @@
                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                     <div>
                         <h5>Engleză</h5>
-                        <p class="price mb-4">18€ / ședință</p>
+                        <p class="price mb-4">180lei / ședință</p>
                     </div>
                     <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
                 </div>
@@ -249,7 +282,7 @@
                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                     <div>
                         <h5>Chimie</h5>
-                        <p class="price mb-4">22€ / ședință</p>
+                        <p class="price mb-4">220lei / ședință</p>
                     </div>
                     <a href="contact.html" class="btn-action">Detalii & Înscriere</a>
                 </div>
