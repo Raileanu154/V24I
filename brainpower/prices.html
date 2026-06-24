@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
+.custom-navbar {
+    background-color: #111111 !important; /* Negru închis modern */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+}
+
+.logo-navbar-img {
+    max-height: 42px; 
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+}
+  .logo-img {
+            height: 150px;
+            width: auto;
+            display: block;
+            mix-blend-mode: multiply; 
+            filter: contrast(1.05); 
+        }
+
+.custom-navbar .nav-link:hover, 
+.custom-navbar .nav-link.active {
+    color: #ffffff !important;
+}
         body {
             background-color: #f4f7f6;
             font-family: 'Inter', sans-serif;
@@ -93,15 +122,18 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">BrainPower</a>
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/gallery/imaginea_Mea.png" alt="BrainPower Logo" class="logo-img">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav gap-2">
-                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item"><a class="nav-link " href="index.html">Acasă</a></li>
                 <li class="nav-item"><a class="nav-link" href="subjects.html">Materii</a></li>
                 <li class="nav-item"><a class="nav-link" href="teachers.html">Profesori</a></li>
                 <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
@@ -111,7 +143,6 @@
         </div>
     </div>
 </nav>
-
 <div class="container pb-5">
 
     <div class="text-center mb-5">
@@ -126,7 +157,7 @@
         </div>
 
         <div class="mb-4">
-            <label class="form-label">Preț per ședință (€)</label>
+            <label class="form-label">Preț per ședință (lei)</label>
             <input type="number" id="pret" class="form-control" placeholder="Ex: 20">
         </div>
 
