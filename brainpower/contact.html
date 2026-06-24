@@ -21,19 +21,26 @@
             padding: 12px 0;
         }
 
+          .logo-img {
+            height: 150px;
+            width: auto;
+            display: block;
+            mix-blend-mode: multiply; 
+            filter: contrast(1.05); 
+        }
+
         .navbar-brand {
             font-weight: 600;
             font-size: 1.5rem;
         }
 
-        .nav-link-menu {
+        .nav-link {
             color: rgba(255, 255, 255, 0.75) !important;
             font-weight: 500;
-            text-decoration: none;
             transition: color 0.2s ease;
         }
 
-        .nav-link-menu:hover, .nav-link-menu.active {
+        .nav-link:hover, .nav-link.active {
             color: #ffffff !important;
         }
 
@@ -101,20 +108,20 @@
             background-color: #e2e8f0;
             border: 1px solid #cbd5e1;
             border-radius: 12px;
-            height: 200px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64748b;
-            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark mb-5">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">BrainPower</a>
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/gallery/imaginea_Mea.png" alt="BrainPower Logo" class="logo-img">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -131,7 +138,7 @@
     </div>
 </nav>
 
-<div class="container pb-5">
+<div class="container pb-5 mt-5">
 
     <div class="text-center mb-5">
         <h1 class="fw-bold" style="color: #1e293b;">Contactează-ne</h1>
@@ -215,7 +222,7 @@
                     <h3 class="fw-bold mb-3" style="color: #1e293b; font-size: 1.2rem;">Locația Noastră</h3>
                     <div class="mb-4">
                         <div class="map-placeholder">
-                            <span>[ Hartă Centru BrainPower - Cahul ]</span>
+                            <img src="img/gallery/Cahul_county.png" alt="Hartă Centru BrainPower - Cahul" style="max-width: 100%; height: auto; display: block;">
                         </div>
                     </div>
                 </div>
